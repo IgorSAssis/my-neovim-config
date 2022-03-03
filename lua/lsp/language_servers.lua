@@ -7,19 +7,19 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 local lang_servers = {
-  "html",
-  "cssls",
-  "tsserver",
-  "bashls",
-  "clangd",
-  "cmake",
-  "dockerls",
-  "phpactor",
-  "jedi_language_server",
-  "jsonls",
-  "rust_analyzer",
-  "sqlls",
-  "ls_emmet"
+   "html",
+   "cssls",
+   "tsserver",
+   "bashls",
+   "clangd",
+   "cmake",
+   "dockerls",
+   "phpactor",
+   "jedi_language_server",
+   "jsonls",
+   "rust_analyzer",
+   "sqlls",
+   "ls_emmet"
 }
 
 lspconfig.sumneko_lua.setup {
