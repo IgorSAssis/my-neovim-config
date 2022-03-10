@@ -4,6 +4,7 @@ lsp_installer.on_server_ready(function(server)
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
                                                                        .make_client_capabilities())
   local opts = {capabilities = capabilities}
+
   if server.name == "sumneko_lua" then
     opts = vim.tbl_deep_extend("force", {
       settings = {
@@ -14,8 +15,17 @@ lsp_installer.on_server_ready(function(server)
           telemetry = {enable = false}
         }
       }
-
+    }, opts)
+  elseif server.name == "clangd" then
+    capabilities.offsetEncoding = {'utf-16'}
+    opts = vim.tbl_deep_extend("force", {
+      on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+      end
     }, opts)
   end
+
   server:setup(opts)
+
 end)
