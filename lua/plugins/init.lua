@@ -1,7 +1,7 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use {'dracula/vim', as = 'dracula'}
-  use {'tiagovla/tokyodark.nvim', config = "vim.cmd[[colorscheme tokyodark]]"}
+  use {'dracula/vim', as = 'dracula', config = "vim.cmd[[colorscheme dracula]]"}
+  use {'tiagovla/tokyodark.nvim'}
   use 'shaunsingh/nord.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
