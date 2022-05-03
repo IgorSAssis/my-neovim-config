@@ -1,6 +1,7 @@
-require("bufferline").setup{}
+vim.opt.termguicolors = true
+require("bufferline").setup {}
 
-vim.cmd[[ 
+vim.cmd [[
     nnoremap <silent><TAB> :BufferLineCycleNext<CR>
     nnoremap <silent><S-TAB> :BufferLineCyclePrev<CR>
 ]]
